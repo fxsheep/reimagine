@@ -33,7 +33,7 @@ Thanks to winocm for opensn0w-X, guys behind xpwntool and decodeimg3.pl for decr
 
 ## Building on iOS
 You need to install Theos, grab a copy of iOS sdk, and install OpenSSL from saurik's repo.  
-Copy `/usr/lib/libcrypto.0.9.8.dylib` to `$SDKROOT/usr/lib/libcrypto.dylib` 
+Copy `/usr/lib/libcrypto.0.9.8.dylib` to `$SDKROOT/usr/lib/libcrypto.dylib`  
 `git clone --recursive https://github.com/danzatt/reimagine.git`  
 `cd reimagine`  
 `make`
