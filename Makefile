@@ -1,19 +1,14 @@
-CC=clang
-CFLAGS= -m32 -O2 -c -pipe -Wall -Wno-unused-function -std=c99
+TARGET := iphone:clang:latest:7.0
 
-LDFLAGS= -lssl -lcrypto -m32
+include $(THEOS)/makefiles/common.mk
 
-all: reimagine
+TOOL_NAME = reimagine
 
-reimagine: main.o helper.o opensn0w-X/src/image3.o opensn0w-X/src/util.o opensn0w-X/src/ibootsup.o opensn0w-X/src/patch.o opensn0w-X/src/kcache.o opensn0w-X/src/macho_loader.o
-	$(CC) $(LDFLAGS) helper.o main.o opensn0w-X/src/image3.o opensn0w-X/src/util.o opensn0w-X/src/ibootsup.o opensn0w-X/src/patch.o opensn0w-X/src/kcache.o opensn0w-X/src/macho_loader.o -o reimagine
+reimagine_FILES = main.c helper.c opensn0w-X/src/image3.c opensn0w-X/src/util.c opensn0w-X/src/ibootsup.c opensn0w-X/src/patch.c opensn0w-X/src/kcache.c \
+opensn0w-X/src/macho_loader.c
+reimagine_CFLAGS = -m32 -O2 -c -pipe -Wall -Wno-unused-function -std=c99 -Iopensn0w-X/include -Wno-error
+reimagine_LDFLAGS =-lcrypto -m32
+reimagine_CODESIGN_FLAGS = -Sentitlements.plist
+reimagine_INSTALL_PATH = /usr/local/bin
 
-main.o: main.c
-	$(CC) $(CFLAGS) main.c
-
-helper.o: helper.c
-	$(CC) $(CFLAGS) helper.c
-
-clean:
-	rm *o reimagine
-
+include $(THEOS_MAKE_PATH)/tool.mk

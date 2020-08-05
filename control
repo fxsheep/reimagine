@@ -1,0 +1,10 @@
+Package: com.fxsheep.reimagine
+Name: reimagine
+Depends: openssl
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Tool based on opensn0w-X for dumping, listing, decrypting and patching IMG3 files
+Maintainer: fxsheep <sunxiaoyang2003@gmail.com>
+Author: danzatt
+Section: Utilities
+Tag: role::hacker
