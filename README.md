@@ -23,7 +23,7 @@ Thanks to winocm for opensn0w-X, guys behind xpwntool and decodeimg3.pl for decr
 
 ```
 
-#Example usage
+## Example usage
 * Pwned iBEC for kloader
 `reimagine iBEC.n90ap.RELEASE.dfu -k ... -iv ... -p -r`
 * Pwned iBoot for iBEC
@@ -31,7 +31,7 @@ Thanks to winocm for opensn0w-X, guys behind xpwntool and decodeimg3.pl for decr
 * Decrypt kernel and extract into MachO file
 `reimagine kernelcache.release.n90 kernel.macho -iv ... -k ... -x -r`
 
-#Building
+## Building
 You need 32bit OpenSSL (e.g. `sudo apt-get install libssl-dev:i386`).  
 `git clone --recursive https://github.com/danzatt/reimagine.git`  
 `cd reimagine/opensn0w-X/src && make all`  
