@@ -37,5 +37,5 @@ Copy `/usr/lib/libcrypto.0.9.8.dylib` to `$SDKROOT/usr/lib/libcrypto.dylib`
 `git clone --recursive https://github.com/danzatt/reimagine.git`  
 `cd reimagine`  
 `export ARCHS=armv7`
-`make`
-`make package`
+`make`  
+`make package`  
